@@ -4,14 +4,39 @@ import { Project } from '../types';
 import { Reveal } from './Reveal';
 
 const projects: Project[] = [
-  { id: '1', title: 'Moderner Steingarten', category: 'Galabau', imageUrl: 'https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&q=80&w=800' },
-  { id: '2', title: 'Rasenpflege & Schnitt', category: 'Gartenpflege', imageUrl: 'https://images.unsplash.com/photo-1558293842-c0fd3db8415e?auto=format&fit=crop&q=80&w=800' },
-  { id: '3', title: 'Vorgarten Neugestaltung', category: 'Galabau', imageUrl: 'https://images.unsplash.com/photo-1605117882932-f9e32b03ef3c?auto=format&fit=crop&q=80&w=800' },
-  { id: '4', title: 'Heckenschnitt', category: 'Pflege', imageUrl: 'https://images.unsplash.com/photo-1611735341450-74d61e660ad2?auto=format&fit=crop&q=80&w=800' },
-  { id: '5', title: 'Terrassen Bepflanzung', category: 'Dekoration', imageUrl: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=800' },
-  { id: '6', title: 'Baumfällung & Entsorgung', category: 'Entsorgung', imageUrl: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800' },
-  { id: '7', title: 'Gartenweg Pflasterung', category: 'Galabau', imageUrl: 'https://images.unsplash.com/photo-1596632488825-7b51b72b8d0c?auto=format&fit=crop&q=80&w=800' },
-  { id: '8', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: 'https://images.unsplash.com/photo-1628186749968-3e4b7858c9f5?auto=format&fit=crop&q=80&w=800' },
+  { id: '1', title: 'Moderner Steingarten', category: 'Galabau', imageUrl: './images/1.jpg' },
+  { id: '2', title: 'Rasenpflege & Schnitt', category: 'Gartenpflege', imageUrl: './images/2.jpg' },
+  { id: '3', title: 'Vorgarten Neugestaltung', category: 'Galabau', imageUrl: './images/3.jpg' },
+  { id: '4', title: 'Heckenschnitt', category: 'Pflege', imageUrl: './images/4.jpg' },
+  { id: '5', title: 'Terrassen Bepflanzung', category: 'Dekoration', imageUrl: './images/5.jpg' },
+  { id: '6', title: 'Baumfällung & Entsorgung', category: 'Entsorgung', imageUrl: './images/34.jpg' },
+  { id: '7', title: 'Gartenweg Pflasterung', category: 'Galabau', imageUrl: './images/7.jpg' },
+  { id: '8', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/8.jpg' },
+  { id: '9', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/9.jpg' },
+  { id: '10', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/10.jpg' },
+    { id: '11', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/33.jpg' },
+    { id: '12', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/32.jpg' },
+  { id: '13', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/13.jpg' },
+    { id: '14', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/14.jpg' },
+      { id: '15', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/15.jpg' },
+  { id: '16', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/16.jpg' },
+  { id: '17', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/19.jpg' },
+  { id: '18', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/18.jpg' },
+    { id: '19', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/19.jpg' },
+      { id: '20', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/20.jpg' },
+        { id: '21', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/21.jpg' },
+  { id: '22', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/22.jpg' },
+  { id: '23', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/23.jpg' },
+  { id: '24', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/27.jpg' },
+
+
+
+
+
+
+
+
+
 ];
 
 export const Gallery: React.FC = () => {
@@ -35,19 +60,16 @@ export const Gallery: React.FC = () => {
   const totalSlides = Math.ceil(projects.length / itemsToShow);
 
   // Autoplay functionality
-  useEffect(() => {
-    let interval: ReturnType<typeof setInterval>;
-    
-    if (!isPaused && totalSlides > 1) {
-      interval = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % totalSlides);
-      }, 4000); // Slides every 4 seconds
-    }
+ useEffect(() => {
+  if (totalSlides <= 1) return; // nuk ka kuptim autoplay
 
-    return () => {
-      if (interval) clearInterval(interval);
-    };
-  }, [isPaused, totalSlides]);
+  const interval = setInterval(() => {
+    setCurrentIndex(prev => (prev + 1) % totalSlides);
+  }, 4000);
+
+  return () => clearInterval(interval);
+}, [totalSlides]);
+
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % totalSlides);
@@ -106,26 +128,19 @@ export const Gallery: React.FC = () => {
             >
               <div 
                 className="flex transition-transform duration-700 ease-in-out"
-                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+style={{ transform: `translateX(-${(currentIndex * 100)}%)` }}
               >
                 {Array.from({ length: totalSlides }).map((_, slideIndex) => (
                   <div key={slideIndex} className="min-w-full flex gap-6 px-1">
                     {projects.slice(slideIndex * itemsToShow, (slideIndex + 1) * itemsToShow).map((project) => (
-                      <div key={project.id} className="w-full relative overflow-hidden rounded-xl aspect-[4/3] shadow-md group/card">
-                         <img 
-                          src={project.imageUrl} 
-                          alt={project.title} 
-                          className="w-full h-full object-cover transform group-hover/card:scale-110 transition-transform duration-700"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                          <span className="text-emerald-400 text-sm font-medium uppercase tracking-wider mb-1 translate-y-4 group-hover/card:translate-y-0 transition-transform duration-500 delay-100">
-                            {project.category}
-                          </span>
-                          <h4 className="text-white text-xl font-bold translate-y-4 group-hover/card:translate-y-0 transition-transform duration-500">
-                            {project.title}
-                          </h4>
-                        </div>
-                      </div>
+                      <div key={project.id} className="w-full rounded-xl aspect-[4/3] shadow-md overflow-hidden">
+  <img 
+    src={project.imageUrl} 
+    alt={project.title} 
+    className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
+  />
+</div>
+
                     ))}
                   </div>
                 ))}

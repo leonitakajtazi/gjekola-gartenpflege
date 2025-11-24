@@ -9,28 +9,28 @@ const services: Service[] = [
     title: 'Gartenpflege',
     description: 'Rundum-Sorglos-Paket für Ihren Rasen, Pflanzenpflege und Bewässerung. Wir sorgen dafür, dass alles grünt und blüht.',
     icon: Flower2,
-    image: 'https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&q=80&w=800'
+    image: './images/3.jpg'
   },
   {
     id: '2',
     title: 'Galabau',
     description: 'Kreative Gartengestaltung, Pflasterarbeiten, Dekoration und Installationen für Ihre persönliche Wohlfühloase.',
     icon: Shovel,
-    image: 'https://images.unsplash.com/photo-1621949174246-13651c6c59b6?auto=format&fit=crop&q=80&w=800'
+    image: './images/28.jpg'
   },
   {
     id: '3',
     title: 'Hecke entfernen',
     description: 'Fachgerechtes Schneiden, Kürzen oder komplettes Entfernen von Hecken inklusive Wurzelwerk.',
     icon: Scissors,
-    image: 'https://images.unsplash.com/photo-1610444583457-3755b4122d64?auto=format&fit=crop&q=80&w=800'
+    image: './images/7.jpg'
   },
   {
     id: '4',
     title: 'Entsorgung',
     description: 'Schnelle und saubere Entfernung sowie fachgerechte Entsorgung von Gartenabfällen, Grünschnitt und Laub.',
     icon: Trash2,
-    image: 'https://images.unsplash.com/photo-1595116543086-628d0028829b?auto=format&fit=crop&q=80&w=800'
+    image: './images/14.jpg'
   }
 ];
 

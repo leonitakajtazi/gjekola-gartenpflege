@@ -14,7 +14,7 @@ export const About: React.FC = () => {
               <div className="absolute -top-4 -left-4 w-2/3 h-2/3 bg-emerald-100 rounded-3xl -z-10"></div>
               <div className="absolute -bottom-4 -right-4 w-2/3 h-2/3 bg-stone-100 rounded-3xl -z-10"></div>
               <img 
-                src="https://images.unsplash.com/photo-1598555848520-213c38099839?q=80&w=1000&auto=format&fit=crop" 
+                src="./images/17.jpg" 
                 alt="Gärtner bei der Arbeit" 
                 className="rounded-2xl shadow-xl w-full object-cover aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5]"
               />

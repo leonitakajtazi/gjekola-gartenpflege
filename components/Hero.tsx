@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
       <div 
         className="absolute inset-0 z-0 parallax"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1558293842-c0fd3db8415e?q=80&w=2070&auto=format&fit=crop")',
+          backgroundImage: 'url("./images/14.jpg")',
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-stone-900/60 via-stone-900/40 to-stone-900/70"></div>
