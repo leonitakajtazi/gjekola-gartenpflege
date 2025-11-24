@@ -36,19 +36,19 @@ const services: Service[] = [
 
 export const Services: React.FC = () => {
   return (
-    <section id="services" className="py-24 bg-stone-50">
+    <section id="services" className="py-16 sm:py-20 md:py-24 bg-stone-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <Reveal>
-            <h2 className="text-emerald-700 font-bold tracking-wide uppercase text-sm mb-3">Was wir bieten</h2>
-            <h3 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-6">Unsere Dienstleistungen</h3>
-            <p className="max-w-2xl mx-auto text-stone-600 text-lg">
+            <h2 className="text-emerald-700 font-bold tracking-wide uppercase text-xs sm:text-sm mb-3">Was wir bieten</h2>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4 sm:mb-6">Unsere Dienstleistungen</h3>
+            <p className="max-w-2xl mx-auto text-stone-600 text-base sm:text-lg px-4">
               Von der regelmäßigen Pflege bis zur kompletten Neugestaltung – wir sind Ihr Partner für alle Arbeiten im Grünen.
             </p>
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {services.map((service, index) => (
             <Reveal key={service.id} delay={index * 100}>
               <div className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col border border-stone-100 hover:border-emerald-200">
@@ -63,14 +63,14 @@ export const Services: React.FC = () => {
                     <service.icon className="h-6 w-6" />
                   </div>
                 </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h4 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-emerald-700 transition-colors">
+                <div className="p-5 sm:p-6 flex flex-col flex-grow">
+                  <h4 className="text-lg sm:text-xl font-bold text-stone-900 mb-2 sm:mb-3 group-hover:text-emerald-700 transition-colors">
                     {service.title}
                   </h4>
-                  <p className="text-stone-600 mb-6 leading-relaxed flex-grow text-sm">
+                  <p className="text-stone-600 mb-4 sm:mb-6 leading-relaxed flex-grow text-sm">
                     {service.description}
                   </p>
-                  <a href="#contact" className="inline-flex items-center text-emerald-600 font-semibold text-sm hover:text-emerald-800 transition-colors">
+                  <a href="#contact" className="inline-flex items-center text-emerald-600 font-semibold text-sm hover:text-emerald-800 active:text-emerald-900 transition-colors min-h-[44px]">
                     Angebot anfragen <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>

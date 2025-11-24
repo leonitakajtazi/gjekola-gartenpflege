@@ -4,9 +4,9 @@ import { Reveal } from './Reveal';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 bg-white overflow-hidden">
+    <section id="about" className="py-16 sm:py-20 md:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
           
           {/* Image Side */}
           <Reveal>
@@ -33,37 +33,37 @@ export const About: React.FC = () => {
           {/* Content Side */}
           <Reveal delay={200}>
             <div>
-              <h2 className="text-emerald-700 font-bold tracking-wide uppercase text-sm mb-3">Über Uns</h2>
-              <h3 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-6">
+              <h2 className="text-emerald-700 font-bold tracking-wide uppercase text-xs sm:text-sm mb-3">Über Uns</h2>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4 sm:mb-6 leading-tight">
                 Leidenschaft für Natur seit über 10 Jahren
               </h3>
               
-              <p className="text-stone-600 text-lg mb-6 leading-relaxed">
+              <p className="text-stone-600 text-base sm:text-lg mb-4 sm:mb-6 leading-relaxed">
                 Willkommen bei <strong>Gjekola Gartenpflege</strong>. Wir sind Ihr zuverlässiger Partner für alles rund um Ihren Garten. Was als kleine Leidenschaft begann, hat sich zu einem professionellen Dienstleistungsunternehmen entwickelt, das Gärten in wahre Wohlfühloasen verwandelt.
               </p>
 
-              <p className="text-stone-600 text-lg mb-8 leading-relaxed">
+              <p className="text-stone-600 text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
                 Unser Geschäftsführer <strong>Oltjon Gjekola</strong> und sein Team legen größten Wert auf präzise Arbeit, Pünktlichkeit und die Zufriedenheit unserer Kunden. Egal ob einfache Rasenpflege oder komplexe Neugestaltung – wir bringen das richtige Werkzeug und die nötige Expertise mit.
               </p>
 
-              <div className="space-y-4 mb-10">
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-emerald-600 flex-shrink-0" />
-                  <span className="text-stone-700 font-medium">Kostenlose Erstbesichtigung & Beratung</span>
+              <div className="space-y-3 sm:space-y-4 mb-8 sm:mb-10">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 sm:h-6 sm:w-6 text-emerald-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-stone-700 font-medium text-sm sm:text-base">Kostenlose Erstbesichtigung & Beratung</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-emerald-600 flex-shrink-0" />
-                  <span className="text-stone-700 font-medium">Modernste Geräte & umweltfreundliche Methoden</span>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 sm:h-6 sm:w-6 text-emerald-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-stone-700 font-medium text-sm sm:text-base">Modernste Geräte & umweltfreundliche Methoden</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-emerald-600 flex-shrink-0" />
-                  <span className="text-stone-700 font-medium">Fairer Preis für erstklassige Leistung</span>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 sm:h-6 sm:w-6 text-emerald-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-stone-700 font-medium text-sm sm:text-base">Fairer Preis für erstklassige Leistung</span>
                 </div>
               </div>
 
               <a 
                 href="#contact" 
-                className="inline-flex items-center px-8 py-4 bg-stone-900 text-white rounded-full font-semibold hover:bg-emerald-700 transition-colors shadow-lg"
+                className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-stone-900 text-white rounded-full font-semibold text-sm sm:text-base hover:bg-emerald-700 active:scale-95 transition-all shadow-lg min-h-[44px]"
               >
                 Kennenlernen
               </a>

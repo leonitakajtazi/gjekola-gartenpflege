@@ -67,7 +67,8 @@ export const Navbar: React.FC = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 rounded-md ${isScrolled ? 'text-stone-800' : 'text-white'} hover:bg-white/10`}
+              className={`p-2.5 rounded-md ${isScrolled ? 'text-stone-800' : 'text-white'} hover:bg-white/10 active:bg-white/20 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center`}
+              aria-label="Menu"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -77,26 +78,26 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute w-full bg-white shadow-xl border-t border-stone-100">
-          <div className="px-4 pt-2 pb-6 space-y-2">
+        <div className="md:hidden absolute w-full bg-white shadow-xl border-t border-stone-100 max-h-[calc(100vh-4rem)] overflow-y-auto">
+          <div className="px-4 pt-2 pb-6 space-y-1">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-4 rounded-md text-base font-medium text-stone-700 hover:text-emerald-700 hover:bg-emerald-50 transition-colors"
+                className="block px-4 py-3.5 rounded-md text-base font-medium text-stone-700 hover:text-emerald-700 hover:bg-emerald-50 active:bg-emerald-100 transition-colors min-h-[44px] flex items-center"
               >
                 {link.name}
               </a>
             ))}
-            <div className="pt-4 mt-4 border-t border-stone-100 flex flex-col gap-3">
-              <a href="tel:01623222606" className="flex items-center gap-2 text-stone-600 px-3">
-                <Phone className="h-4 w-4 text-emerald-600" />
-                <span>0162 3222 606</span>
+            <div className="pt-4 mt-4 border-t border-stone-100 flex flex-col gap-2">
+              <a href="tel:+491623222606" className="flex items-center gap-3 text-stone-600 px-4 py-3 rounded-md hover:bg-emerald-50 active:bg-emerald-100 transition-colors min-h-[44px]">
+                <Phone className="h-5 w-5 text-emerald-600 flex-shrink-0" />
+                <span className="text-base">0162 3222 606</span>
               </a>
-              <a href="mailto:Gartenarbeit_01@gmx.net" className="flex items-center gap-2 text-stone-600 px-3">
-                <Mail className="h-4 w-4 text-emerald-600" />
-                <span>Gartenarbeit_01@gmx.net</span>
+              <a href="mailto:Gartenarbeit_01@gmx.net" className="flex items-center gap-3 text-stone-600 px-4 py-3 rounded-md hover:bg-emerald-50 active:bg-emerald-100 transition-colors min-h-[44px] break-all">
+                <Mail className="h-5 w-5 text-emerald-600 flex-shrink-0" />
+                <span className="text-sm sm:text-base">Gartenarbeit_01@gmx.net</span>
               </a>
             </div>
           </div>
