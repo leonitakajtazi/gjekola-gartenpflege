@@ -80,87 +80,103 @@ export const Contact: React.FC = () => {
           <Reveal delay={200}>
             <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 lg:p-10 border border-stone-100">
               <h4 className="text-xl sm:text-2xl font-bold text-stone-900 mb-5 sm:mb-6">Anfrage senden</h4>
-              <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-stone-700 mb-2">Name</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all text-base min-h-[44px]"
-                      placeholder="Ihr Name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-stone-700 mb-2">Telefon</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all text-base min-h-[44px]"
-                      placeholder="Ihre Nummer"
-                    />
-                  </div>
-                </div>
+             <form
+  action="https://formspree.io/f/mwpjavke"
+  method="POST"
+  className="space-y-5 sm:space-y-6"
+>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+    <div>
+      <label htmlFor="name" className="block text-sm font-medium text-stone-700 mb-2">
+        Name
+      </label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        value={formData.name}
+        onChange={handleChange}
+        className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all text-base min-h-[44px]"
+        placeholder="Ihr Name"
+      />
+    </div>
 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-stone-700 mb-2">E-Mail</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all text-base min-h-[44px]"
-                    placeholder="ihre@email.de"
-                  />
-                </div>
+    <div>
+      <label htmlFor="phone" className="block text-sm font-medium text-stone-700 mb-2">
+        Telefon
+      </label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        value={formData.phone}
+        onChange={handleChange}
+        className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all text-base min-h-[44px]"
+        placeholder="Ihre Nummer"
+      />
+    </div>
+  </div>
 
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-stone-700 mb-2">Interesse an</label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all text-base min-h-[44px]"
-                  >
-                    <option value="Gartenpflege">Gartenpflege</option>
-                    <option value="Galabau">Galabau (Gestaltung)</option>
-                    <option value="Hecke entfernen">Hecke entfernen</option>
-                    <option value="Entsorgung">Entsorgung</option>
-                    <option value="Sonstiges">Sonstiges</option>
-                  </select>
-                </div>
+  <div>
+    <label htmlFor="email" className="block text-sm font-medium text-stone-700 mb-2">
+      E-Mail
+    </label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+      value={formData.email}
+      onChange={handleChange}
+      className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all text-base min-h-[44px]"
+      placeholder="ihre@email.de"
+    />
+  </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-stone-700 mb-2">Nachricht</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all resize-none text-base"
-                    placeholder="Wie können wir Ihnen helfen?"
-                  ></textarea>
-                </div>
+  <div>
+    <label htmlFor="service" className="block text-sm font-medium text-stone-700 mb-2">
+      Interesse an
+    </label>
+    <select
+      id="service"
+      name="service"
+      value={formData.service}
+      onChange={handleChange}
+      className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all text-base min-h-[44px]"
+    >
+      <option value="Gartenpflege">Gartenpflege</option>
+      <option value="Galabau">Galabau (Gestaltung)</option>
+      <option value="Hecke entfernen">Hecke entfernen</option>
+      <option value="Entsorgung">Entsorgung</option>
+      <option value="Sonstiges">Sonstiges</option>
+    </select>
+  </div>
 
-                <button
-                  type="submit"
-                  className="w-full py-3.5 sm:py-4 bg-emerald-700 text-white font-bold rounded-lg hover:bg-emerald-800 active:bg-emerald-900 active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-emerald-900/20 min-h-[44px] text-base sm:text-lg"
-                >
-                  Nachricht senden <Send className="h-4 w-4" />
-                </button>
-              </form>
+  <div>
+    <label htmlFor="message" className="block text-sm font-medium text-stone-700 mb-2">
+      Nachricht
+    </label>
+    <textarea
+      id="message"
+      name="message"
+      required
+      rows={4}
+      value={formData.message}
+      onChange={handleChange}
+      className="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all resize-none text-base"
+      placeholder="Wie können wir Ihnen helfen?"
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    className="w-full py-3.5 sm:py-4 bg-emerald-700 text-white font-bold rounded-lg hover:bg-emerald-800 active:bg-emerald-900 active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-emerald-900/20 min-h-[44px] text-base sm:text-lg"
+  >
+    Nachricht senden <Send className="h-4 w-4" />
+  </button>
+</form>
+
             </div>
           </Reveal>
         </div>
