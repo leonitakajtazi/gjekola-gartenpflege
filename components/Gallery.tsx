@@ -12,7 +12,6 @@ const projects: Project[] = [
   { id: '6', title: 'Baumfällung & Entsorgung', category: 'Entsorgung', imageUrl: './images/34.jpg' },
   { id: '7', title: 'Gartenweg Pflasterung', category: 'Galabau', imageUrl: './images/7.jpg' },
   { id: '8', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/8.jpg' },
-  { id: '9', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/9.jpg' },
   { id: '10', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/10.jpg' },
     { id: '11', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/33.jpg' },
     { id: '12', title: 'Rollrasen Verlegung', category: 'Gartenpflege', imageUrl: './images/32.jpg' },
